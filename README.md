@@ -1,6 +1,6 @@
 # $find for Framer.js
 
-Inspired by jQuery's selectors, this module makes it easier to find and target layers in Framer.js. Find all layers in your project, target layers that shares the same name, create custom naming schemes for default behaviors and more. This module requires the .name property to be set on your layers in order to find them (automatically done if you import from PS/Sketch).
+Inspired by jQuery's selectors, this module makes it easier to find and target layers in Framer.js based on the .name property.
 
 ![find](https://s3.amazonaws.com/f.cl.ly/items/3p3L1p1W0B412p0g3Q0p/Image%202016-01-01%20at%205.49.05%20em.png?v=87880c1f)
 
@@ -14,12 +14,11 @@ More info about modules in Framer and how to install them: [FramerJS Docs - Modu
 
 ## Functions
 
-**$find(string)**
-Returns an array of layers containing the string. 
+**$find(string)** -
+Returns an array of layers that match the string (case-sensitive). Use ```>``` for targeting descendant layers. ie. ```'overlay > btn'``` to target all ```btn``` layers somewhere below ```overlay``` in the hierachy. 
 
-**$get(string)**
-Same as $find, but returns the first matching layer.
-
+**$get(string)** -
+Same as $find, but returns the first matching layer from the array.
 
 ## Examples
 
@@ -27,16 +26,20 @@ Same as $find, but returns the first matching layer.
     for layer in $find()
         print layer
 
-### Create custom naming schemes to dictate behaviors
-    for l in $find '_hide' then l.visible = false
-Find all layers containing the string '_hide'
+### Create custom naming schemes to define default behaviors
+    for layer in $find '_hide'
+    	layer.visible = false
 
-### Specify your targeting using descendant selectors (>)
+
+### Specify using descendant selectors (>)
+
+Find all layers below 'card1' that contains the string 'image':
+
     $find 'card1 > image'
-Find all layers below 'card1' that contains the string 'image'.
+    
+Find all layers below 'card':
 
     $find 'card >'
-Find all layers below layers matching 'card'.
 
 
 
