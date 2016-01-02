@@ -2,7 +2,7 @@
 
 Inspired by jQuery's selectors, this module makes it easier to find and target layers in Framer.js based on the .name property.
 
-![find](https://s3.amazonaws.com/f.cl.ly/items/3p3L1p1W0B412p0g3Q0p/Image%202016-01-01%20at%205.49.05%20em.png?v=87880c1f)
+![find](https://s3.amazonaws.com/f.cl.ly/items/3Q0E0E1i3v3D1w2m2P3L/descfind.png?v=24d5bb16)
 
 ## Installation
 
