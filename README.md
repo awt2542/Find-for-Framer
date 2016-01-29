@@ -15,26 +15,26 @@ More info about modules in Framer and how to install them: [FramerJS Docs - Modu
 Returns an array of layers that match the string (case-sensitive). Use ``` ```(spacebar) for targeting descendant layers. Eg. ```'overlay btn'``` to target all ```btn``` layers somewhere below ```overlay``` in the hierachy.
 
 **layer.select(string)** -
-Start the search from ```layer```. Eg. page.currentPage.select('btn')
+Start the search from ```layer```. Eg. page.currentPage.select('image')
 
-## Examples
+### Wildcard selectors (*)
 
-### Find all layers in a project
-    for layer in Select()
-        print layer
+Find all layers that ends with '_btn':
 
-### Create custom naming schemes to define default behaviors
-    for layer in Select '*_hide'
-    	layer.visible = false
+    Select '*_btn'
 
-
-### Specify using descendant selectors (>)
+### Specify using descendant selectors (space)
 
 Find all layers below 'card1' that contains the string 'image':
 
-    $find 'card1 > image'
-    
+    Select 'card1 image'
 
+### Specify using direct selectors (>)
+
+Find all layers directly below 'card1' that contains the string 'image':
+
+    Select 'card1 > image'
+    
 
 ##Contact
 
