@@ -1,6 +1,6 @@
 # Select for Framer.js
 
-Inspired by jQuery's selectors, this module makes it easier to find and target layers in Framer.js based on the .name property.
+Inspired by CSS selectors, this module makes it easier to find and target layers in Framer.js based on the .name property.
 
 ## Installation
 
