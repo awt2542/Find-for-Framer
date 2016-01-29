@@ -29,4 +29,4 @@ exports.Select = (selector, fromLayer) ->
   else
     layers
 
-Layer::select = (string) -> Select(string, @)
+Layer::select = (string) -> exports.Select(string, @)
