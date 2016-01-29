@@ -35,6 +35,12 @@ Find all layers directly below 'card1' that contains the string 'image':
 
     Select 'card1 > image'
     
+### Combinations
+
+Find all button layers inside the page named "first"
+
+    Select 'pages > first *_btn'
+    
 
 ##Contact
 
