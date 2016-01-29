@@ -15,7 +15,7 @@ More info about modules in Framer and how to install them: [FramerJS Docs - Modu
 Returns an array of layers that match the string (case-sensitive). Use ``` ```(spacebar) for targeting descendant layers. Eg. ```'overlay btn'``` to target all ```btn``` layers somewhere below ```overlay``` in the hierachy.
 
 **layer.select(string)** -
-Start the search from ```layer```. Eg. page.currentPage.select('image')
+Start the search from ```layer```. Eg. ```page.currentPage.select('image')```
 
 ### Wildcard selectors (*)
 
