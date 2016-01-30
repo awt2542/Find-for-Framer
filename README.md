@@ -35,6 +35,12 @@ Find all layers directly below 'card1' that contains the string 'image':
 
     Select 'card1 > image'
     
+### Multiple searches (,)
+
+Find layer matching two or more selectors
+
+    Select 'popup, container, save_button'
+    
 ### Combinations
 
 Find all button layers inside the page named "first"
