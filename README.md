@@ -10,7 +10,7 @@ Select('card > image') # find all layers named "image" and direct descandant of 
 Select('card image') # find all layers named "image" and descendants of layers named "container"
 Select('card, image') # find all layers named "card" and all layers named "image"
 Select('card*') # find all layers with names starting with "card". eg. card1,card2,card3 etc.
-page.currentPage.select('card') # find all layers inside the current page named "card"
+page.currentPage.select('card') # find all layers named "card" and descendants of the current page 
 
 # use case example: add behaviors based on custom naming schemes
 for layer in Select('*_hide')
