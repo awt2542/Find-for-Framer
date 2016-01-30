@@ -29,7 +29,7 @@ layer.select(selectorString) # only search descendants of layer
 | A B    | Any layer named B that is a descendant of a layer named A (that is: a subLayer, or a subLayer of a subLayer, etc.)  |
 | A > B  | Any layer named B that is a subLayer (i.e. direct descendant) of a layer named A  |
 | A, B  | Any layer named A or any layer named B |
-| *  | Wildcard character |
+| *  | Any layer (wildcard character) |
 
 ## Installation
 
