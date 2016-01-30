@@ -23,7 +23,7 @@ Select(selectorString) # returns array of layers matching the selectorString
 layer.select(selectorString) # only search descendants of layer
 ```
 
-| selectorString      |  Resulting array |
+| Supported selectors      |  Resulting array |
 | ------------- | ------------- |
 | A    | Any layer named A |
 | A B    | Any layer named B that is a descendant of a layer named A (that is: a subLayer, or a subLayer of a subLayer, etc.)  |
