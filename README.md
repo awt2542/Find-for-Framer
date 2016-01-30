@@ -12,9 +12,9 @@ Select('card, image') # find all layers named "card" and all layers named "image
 Select('card*') # find all layers with names starting with "card". eg. card1,card2,card3 etc.
 page.currentPage.select('card') # find all layers named "card" and descendants of the current page 
 
-# use case example: add behaviors based on custom naming schemes
-for layer in Select('*_hide')
-    layer.visible = false
+# use case example: add behaviors based on layer names (great for imported layers from Sketch/PS)
+for layer in Select('*_dimmed')
+    layer.opacity = 0.6
 
 ```
 #### Documentation
