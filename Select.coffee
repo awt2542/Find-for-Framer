@@ -11,7 +11,8 @@ match = (hierarchy, string) ->
   cleanSpaces = string.replace(/\s*>\s*/g,'>') # clean up spaces around arrows
   wildcard = cleanSpaces.split('*').join('[^>]*') # asteriks as layer name wildcard
   descendants = wildcard.split(' ').join('(?:.*)>') # space as structure wildcard
-  regexString = "(^|>)"+descendants+"$" # always bottom layer, maybe part of hierarchy
+  multiple = descendants.split(',').join('$|') # allow multiple searches using comma
+  regexString = "(^|>)"+multiple+"$" # always bottom layer, maybe part of hierarchy
 
   regExp = new RegExp(regexString) 
   return hierarchy.match(regExp)
