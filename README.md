@@ -1,6 +1,35 @@
-# Select for Framer.js
+# Select for Framer
 
-Inspired by CSS selectors, this module makes it easier to find and target layers in Framer.js based on the .name property.
+Inspired by CSS selectors, this module makes it easier to find and target layers based on the .name property.
+
+
+#### Examples
+```coffeescript
+Select('card') # find all layers named "card" (case-sensitive)
+Select('card > image') # find all layers named "image" and direct descandant of layers named "card"
+Select('card image') # find all layers named "image" and descendants of layers named "container"
+Select('card, image') # find all layers named "card" and all layers named "image"
+Select('card*') # find all layers with names starting with "card". eg. card1,card2,card3 etc.
+page.currentPage.select('card') # find all layers inside the current page named "card"
+
+# use case example: add behaviors based on custom naming schemes
+for layer in Select('*_hide')
+    layer.visible = false
+
+```
+#### Documentation
+```coffeescript
+Select(selectorString) # returns array of layers matching the selectorString
+layer.select(selectorString) # only search descendants of layer
+```
+
+| selectorString      |  Resulting array |
+| ------------- | ------------- |
+| A    | Any layer named A |
+| A B    | Any layer named B that is a descendant of a layer named A (that is: a subLayer, or a subLayer of a subLayer, etc.)  |
+| A > B  | Any layer named B that is a subLayer (i.e. direct descendant) of a layer named A  |
+| A, B  | Any layer named A or any layer named B |
+| *  | Wildcard character |
 
 ## Installation
 
@@ -8,45 +37,6 @@ Inspired by CSS selectors, this module makes it easier to find and target layers
 2. Include it in your app.coffee file by adding ```{Select} = require 'Select'``` to the top of your code.
 
 More info about modules in Framer and how to install them: [FramerJS Docs - Modules](http://framerjs.com/docs/#modules.modules)
-
-## Functions
-
-**Select(string)** -
-Returns an array of layers that match the string (case-sensitive). Use ``` ```(spacebar) for targeting descendant layers. Eg. ```'overlay btn'``` to target all ```btn``` layers somewhere below ```overlay``` in the hierachy.
-
-**layer.select(string)** -
-Start the search from ```layer```. Eg. ```page.currentPage.select('image')```
-
-### Wildcard selectors (*)
-
-Find all layers that ends with '_btn':
-
-    Select '*_btn'
-
-### Specify using descendant selectors (space)
-
-Find all layers below 'card1' that contains the string 'image':
-
-    Select 'card1 image'
-
-### Specify using direct selectors (>)
-
-Find all layers directly below 'card1' that contains the string 'image':
-
-    Select 'card1 > image'
-    
-### Multiple searches (,)
-
-Find layer matching two or more selectors
-
-    Select 'popup, container, save_button'
-    
-### Combinations
-
-Find all button layers inside the page named "first"
-
-    Select 'pages > first *_btn'
-    
 
 ##Contact
 
