@@ -30,4 +30,7 @@ exports.Select = (selector, fromLayer) ->
   else
     layers
 
-Layer::select = (string) -> exports.Select(string, @)
+exports.SelectOne = (selector, fromLayer) -> exports.Select(selector, fromLayer)[0]
+
+Layer::select = (selector) -> exports.Select(selector, @)
+Layer::selectOne = (selector) -> exports.Select(selector, @)[0]
