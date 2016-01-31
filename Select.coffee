@@ -8,11 +8,11 @@ getHierarchy = (layer, string = '') ->
 
 match = (hierarchy, string) ->
   # prepare regex tokens
-  cleanSpaces = string.replace(/\s*>\s*/g,'>') # clean up spaces around arrows
-  wildcard = cleanSpaces.split('*').join('[^>]*') # asteriks as layer name wildcard
-  descendants = wildcard.split(' ').join('(?:.*)>') # space as structure wildcard
-  multiple = descendants.split(',').join('$|') # allow multiple searches using comma
-  regexString = "(^|>)"+multiple+"$" # always bottom layer, maybe part of hierarchy
+  string = string.replace(/\s*>\s*/g,'>') # clean up spaces around arrows
+  string = string.split('*').join('[^>]*') # asteriks as layer name wildcard
+  string = string.split(' ').join('(?:.*)>') # space as structure wildcard
+  string = string.split(',').join('$|') # allow multiple searches using comma
+  regexString = "(^|>)"+string+"$" # always bottom layer, maybe part of hierarchy
 
   regExp = new RegExp(regexString) 
   return hierarchy.match(regExp)
