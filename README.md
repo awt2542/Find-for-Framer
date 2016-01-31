@@ -48,6 +48,14 @@ for layer in Select('*_slideIn')
     layer.animate
         properties:
             maxX: originalValue
+            
+# Find layers without named variables
+for i in [0..5]
+    temp = new Layer
+        name: item+i
+        y: 100*i
+        
+print SelectOne('item2')
 ```
 
 ####Contact
