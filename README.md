@@ -9,12 +9,16 @@ Select('card > image') # find all layers named "image" and direct descendants of
 Select('card image') # find all layers named "image" and descendants of layers named "container"
 Select('card, image') # find all layers named "card" and all layers named "image"
 Select('card*') # find all layers with names starting with "card". eg. card1,card2,card3 etc.
+SelectOne('card3') # return the first layer matching the name "card3"
 page.currentPage.select('card') # find all layers named "card" and descendants of the current page
 ```
 #### Reference
 ```coffeescript
 Select(selectorString) # returns array of layers matching the selectorString
+SelectOne(selectorString) # same as above, but returns first matching layer
+
 layer.select(selectorString) # only search descendants of layer
+layer.selectOne(selectorString) # same as above, but returns first matching layer
 ```
 
 | Selector      |  Result |
