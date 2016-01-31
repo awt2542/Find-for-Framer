@@ -6,7 +6,7 @@ Inspired by CSS selectors, this module makes it easier to find and target layers
 ```coffeescript
 Select('card') # returns an array with all layers named "card" (case-sensitive)
 Select('card > image') # all layers named "image" and direct descendants of layers named "card"
-Select('card image') # all layers named "image" and descendants of layers named "container"
+Select('card image') # all layers named "image" and descendants of layers named "card"
 Select('card, image') # all layers named "card" and all layers named "image"
 Select('card*') # all layers with names starting with "card". eg. card1,card2,card3 etc.
 SelectOne('card3') # returns the first layer matching the name "card3"
