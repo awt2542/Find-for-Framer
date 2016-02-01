@@ -18,7 +18,7 @@ match = (hierarchy, string) ->
   return hierarchy.match(regExp)
 
 exports.Select = (selector, fromLayer) ->
-  layers = Framer.CurrentContext.layers
+  layers = Framer.CurrentContext.getLayers()
 
   if selector?
     layers = _.filter layers, (layer) ->
