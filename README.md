@@ -32,7 +32,7 @@ layer.selectOne(selectorString) # same as above, but returns first matching laye
 #### Installation
 
 1. Add the Select.coffee file to the /modules directory inside your framer project.
-2. Include it in your app.coffee file by adding ```{Select} = require 'Select'``` to the top of your code.
+2. Include it in your app.coffee file by adding ```{Select,SelectOne} = require 'Select'``` to the top of your code.
 
 More info about modules in Framer and how to install them: [Framer Docs - Modules](http://framerjs.com/docs/#modules.modules)
 
