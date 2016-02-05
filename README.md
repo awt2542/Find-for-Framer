@@ -12,6 +12,14 @@ Select('card*') # all layers with names starting with "card". eg. card1,card2,ca
 SelectOne('card3') # returns the first layer matching the name "card3"
 page.currentPage.select('card') #  all layers named "card" and descendants of the current page
 ```
+
+#### Installation
+
+1. Download [Select.coffee](https://github.com/awt2542/Select-for-Framer/raw/master/Select.coffee) to your project's /modules directory 
+2. Add ```{Select, SelectOne} = require 'Select'``` to the top of your code
+
+More info: [Framer Docs - Modules](http://framerjs.com/docs/#modules.modules)
+
 #### Reference
 ```coffeescript
 Select(selectorString) # returns array of layers matching the selectorString
@@ -28,13 +36,6 @@ layer.selectOne(selectorString) # same as above, but returns first matching laye
 | A > B  | Any layer named B that is a subLayer (i.e. direct descendant) of a layer named A  |
 | A, B  | Any layer named A or any layer named B |
 | *  | Any layer (wildcard character) |
-
-#### Installation
-
-1. Add the Select.coffee file to the /modules directory inside your framer project.
-2. Include it in your app.coffee file by adding ```{Select,SelectOne} = require 'Select'``` to the top of your code.
-
-More info about modules in Framer and how to install them: [Framer Docs - Modules](http://framerjs.com/docs/#modules.modules)
 
 #### More examples
 ```coffeescript
