@@ -32,10 +32,10 @@ layer.findAll(selectorString) # only search descendants of layer
 layer.find(selectorString) # same as above, but returns first matching layer
 
 # Shortcuts using the florin sign (option+f)
-ƒ() # Find()
-ƒƒ() # FindAll()
-layer.ƒ() # layer.find()
-layer.ƒƒ() # layer.findAll()
+ƒ(selectorString) # Find()
+ƒƒ(selectorString) # FindAll()
+layer.ƒ(selectorString) # layer.find()
+layer.ƒƒ(selectorString) # layer.findAll()
 ```
 
 | Selector      |  Result |
