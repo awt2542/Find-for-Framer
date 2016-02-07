@@ -12,6 +12,9 @@ FindAll('card*') # all layers with names starting with "card". eg. card1,card2,c
 Find('card3') # returns the first layer matching the name "card3"
 page.currentPage.findAll('card') #  all layers named "card" and descendants of the current page
 ```
+![findModule](https://s3.amazonaws.com/f.cl.ly/items/2T0P0s033S160O060l3K/findScreenshot.png?v=bfb59d28)
+
+Try the example project: http://share.framerjs.com/oecn8w0szhkh/
 
 #### Installation
 
