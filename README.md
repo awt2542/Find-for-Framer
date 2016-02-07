@@ -25,17 +25,17 @@ More info: [Framer Docs - Modules](http://framerjs.com/docs/#modules.modules)
 
 #### Reference
 ```coffeescript
-FindAll(selectorString) # returns array of layers matching the selectorString
-Find(selectorString) # same as above, but returns first matching layer
+FindAll(selector) # returns array of layers matching the selector
+Find(selector) # same as above, but returns first matching layer
 
-layer.findAll(selectorString) # only search descendants of layer
-layer.find(selectorString) # same as above, but returns first matching layer
+layer.findAll(selector) # only search descendants of layer
+layer.find(selector) # same as above, but returns first matching layer
 
 # Shortcuts using the florin sign (option+f)
-ƒ(selectorString) # Find()
-ƒƒ(selectorString) # FindAll()
-layer.ƒ(selectorString) # layer.find()
-layer.ƒƒ(selectorString) # layer.findAll()
+ƒ(selector) # Find()
+ƒƒ(selector) # FindAll()
+layer.ƒ(selector) # layer.find()
+layer.ƒƒ(selector) # layer.findAll()
 ```
 
 | Selector      |  Result |
