@@ -32,7 +32,7 @@ FindAll('item1 happy*')
 FindAll('artboard > happy*')
 
 Use the florin sign as a shortcut (option + f)
-eg. ƒ('item3 > happyfries')
+eg. ƒ('item3 > happymilk')
 
 ƒ() = Find()
 ƒƒ() = FindAll()
