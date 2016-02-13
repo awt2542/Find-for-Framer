@@ -20,6 +20,7 @@ Try the example project: http://share.framerjs.com/oecn8w0szhkh/
 
 1. Download [findModule.coffee](https://github.com/awt2542/Find-for-Framer/raw/master/findModule.coffee) to your project's /modules directory 
 2. Add ```{Find, ƒ, FindAll, ƒƒ} = require 'findModule'``` to the top of your code
+3. Make sure you're running the latest version of Framer.js. File -> Update Framer...
 
 More info: [Framer Docs - Modules](http://framerjs.com/docs/#modules.modules)
 
