@@ -1,10 +1,8 @@
-_getHierarchy = (layer, string = '') ->
-  string = layer.name+string
-  if layer.superLayer?
-    string = '>'+string
-    _getHierarchy layer.superLayer, string
-  else
-    return string
+_getHierarchy = (layer) ->
+  string = ''
+  for a in layer.ancestors()
+    string = a.name+'>'+string
+  return string = string+layer.name
 
 _match = (hierarchy, string) ->
   # prepare regex tokens
