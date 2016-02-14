@@ -28,17 +28,43 @@ _findAll = (selector, fromLayer) ->
   else
     layers
 
+exports.ƒ = (selector, fromLayer) -> _findAll(selector, fromLayer)
 
-# Global
-exports.Find    = (selector, fromLayer) -> _findAll(selector, fromLayer)[0]
-exports.ƒ       = (selector, fromLayer) -> _findAll(selector, fromLayer)[0]
+###
+Add ability to call layer methods and properties on all arrays, not just those returned by ƒ()
+###
 
-exports.FindAll = (selector, fromLayer) -> _findAll(selector, fromLayer)
-exports.ƒƒ      = (selector, fromLayer) -> _findAll(selector, fromLayer)
+templateLayer = new Layer
 
-# Methods
-Layer::find     = (selector, fromLayer) -> _findAll(selector, @)[0]
-Layer::ƒ        = (selector, fromLayer) -> _findAll(selector, @)[0]
+# Add layer properties and methods
+_.keys(Layer.prototype).forEach (k) ->
+  if k is 'toInspect' then return
+  if typeof templateLayer[k] is 'function'
+    Object.defineProperty(Array.prototype, k, {
+      enumerable: false
+      configurable: true
+      value: (params...) -> 
+        _.each @, (l) -> l[k](params...) if l instanceof Layer
+    })
+  else
+    Object.defineProperty(Array.prototype, k, {
+      set: (newValue) ->
+        _.each @, (l) ->
+          l[k] = newValue if l instanceof Layer
+      configurable: true
+      enumerable: false
+    })
 
-Layer::findAll  = (selector, fromLayer) -> _findAll(selector, @)
-Layer::ƒƒ       = (selector, fromLayer) -> _findAll(selector, @)
+# Add support for states
+Object.defineProperty(Array.prototype, 'states', {
+  get: -> 
+    obj = {}
+    _.keys(Object.getPrototypeOf(templateLayer.states)).forEach (k) =>
+      obj[k] = (params...) =>
+        _.each @, (l) -> l.states[k](params...)
+    return obj
+  configurable: true
+  enumerable: false
+})
+
+templateLayer.destroy()
