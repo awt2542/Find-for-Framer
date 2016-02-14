@@ -16,8 +16,7 @@ swing = (layer) ->
 		repeat: 999
 
 # Return an array of happy emojis below item1
-for layer in ƒ('item1 > happy*')
-	swing(layer)
+ƒ('item1 > happy*').forEach (layer) -> swing layer
 	
 # Return the first layer matching the selector
 ƒ('item1 > happybagel').hueRotate = 100
