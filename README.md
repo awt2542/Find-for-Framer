@@ -16,16 +16,18 @@ page.currentPage.ƒ('card') #  all layers named "card" and descendants of the cu
 #### Installation
 
 1. Download findModule.coffee and add it to your project's module folder
-2. Add ```{ƒ} = require 'findModule'``` to the top of your code
+2. Add ```{ƒ,ƒƒ} = require 'findModule'``` to the top of your code
 3. Make sure you're running the latest version of Framer.js: File -> Update Framer...
 
 More info: [Framer Docs - Modules](http://framerjs.com/docs/#modules.modules)
 
 #### Reference
 ```coffeescript
-# florin sign (option+f)
-ƒ(selector) # returns array of layers matching the selector
+# the find functions (ƒ = option+f)
+ƒ(selector) # "ƒ" for "find". Returns array of layers matching the selector
+ƒƒ(selector) # "ƒƒ" for "find first". same as ƒ(), but returns first match
 layer.ƒ(selector) # only search descendants of layer
+layer.ƒƒ(selector) # same as layer.ƒ(), but returns first match
 ```
 
 | Selector      |  Result |
