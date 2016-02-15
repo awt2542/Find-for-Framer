@@ -29,7 +29,9 @@ _findAll = (selector, fromLayer) ->
     layers
 
 exports.ƒ = (selector, fromLayer)  -> _findAll(selector, fromLayer)
+exports.ƒƒ = (selector, fromLayer) -> _findAll(selector, fromLayer)[0]
 Layer::ƒ  = (selector)             -> _findAll(selector, @)
+Layer::ƒƒ  = (selector)            -> _findAll(selector, @)[0]
 
 ###
 Add ability to call layer methods and properties on all arrays, not just those returned by ƒ()
