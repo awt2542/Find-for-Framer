@@ -25,6 +25,7 @@ _findAll = (selector, fromLayer) ->
         _match(hierarchy, fromLayer.name+' '+selector)
       else
         _match(hierarchy, selector)
+    return layers if layers.length > 1 else layers[0]
   else
     layers
 

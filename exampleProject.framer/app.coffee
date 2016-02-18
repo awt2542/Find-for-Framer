@@ -2,7 +2,7 @@
 # https://github.com/awt2542/Find-for-Framer
 
 # Import the module
-{ƒ,ƒƒ} = require 'findModule'
+{ƒ} = require 'findModule'
 
 # https://dribbble.com/shots/2139142-Free-Happy-Manje
 sketch = Framer.Importer.load("imported/selectProject@2x")
@@ -16,7 +16,7 @@ swing = (layer) ->
 		repeat: 999
 
 # Return an array of happy emojis below item1
-ƒƒ('item1 > happy*').forEach (layer) -> swing layer
+ƒ('item1 > happy*').forEach (layer) -> swing layer
 	
 # Return the first layer matching the selector
 ƒ('item1 > happybagel').hueRotate = 100
