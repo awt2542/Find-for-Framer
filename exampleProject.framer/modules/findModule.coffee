@@ -28,8 +28,17 @@ _findAll = (selector, fromLayer) ->
   else
     layers
 
-exports.ƒ = (selector, fromLayer)  -> _findAll(selector, fromLayer)
-Layer::ƒ  = (selector)             -> _findAll(selector, @)
+# Recommended
+exports.ƒ = (selector, fromLayer)  -> _findAll(selector, fromLayer)[0]
+exports.ƒƒ = (selector, fromLayer) -> _findAll(selector, fromLayer)
+Layer::ƒ  = (selector)             -> _findAll(selector, @)[0]
+Layer::ƒƒ  = (selector)            -> _findAll(selector, @)
+
+# Backwards compatibility
+exports.Find    = (selector, fromLayer) -> _findAll(selector, fromLayer)[0]
+exports.FindAll = (selector, fromLayer) -> _findAll(selector, fromLayer)
+Layer::find     = (selector, fromLayer) -> _findAll(selector, @)[0]
+Layer::findAll  = (selector, fromLayer) -> _findAll(selector, @)
 
 ###
 Add ability to call layer methods and properties on all arrays, not just those returned by ƒ()
