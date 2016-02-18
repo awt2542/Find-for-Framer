@@ -6,18 +6,18 @@ Inspired by CSS selectors, this module makes it easier to find and target layers
 ```coffeescript
 # florin sign (option+f)
 ƒ('card') # returns the first layer named "card" (case-sensitive)
-ƒƒ('card') # returns an array with all layers named "card"
-ƒƒ('card > image') # all layers named "image" and direct descendants of layers named "card"
-ƒƒ('card image') # all layers named "image" and descendants of layers named "card"
-ƒƒ('card, image') # all layers named "card" and all layers named "image"
-ƒƒ('card*') # all layers with names starting with "card". eg. card1,card2,card3 etc.
-page.currentPage.ƒƒ('card') #  all layers named "card" and descendants of the current page
+ƒ('card') # returns an array with all layers named "card"
+ƒ('card > image') # all layers named "image" and direct descendants of layers named "card"
+ƒ('card image') # all layers named "image" and descendants of layers named "card"
+ƒ('card, image') # all layers named "card" and all layers named "image"
+ƒ('card*') # all layers with names starting with "card". eg. card1,card2,card3 etc.
+page.currentPage.ƒ('card') #  all layers named "card" and descendants of the current page
 ```
 
 #### Installation
 
 1. Download findModule.coffee and add it to your project's module folder
-2. Add ```{ƒ,ƒƒ} = require 'findModule'``` to the top of your code
+2. Add ```{ƒ} = require 'findModule'``` to the top of your code
 3. Make sure you're running the latest version of Framer.js: File -> Update Framer...
 
 More info: [Framer Docs - Modules](http://framerjs.com/docs/#modules.modules)
@@ -25,10 +25,8 @@ More info: [Framer Docs - Modules](http://framerjs.com/docs/#modules.modules)
 #### Reference
 ```coffeescript
 # the find functions (ƒ = option+f)
-ƒƒ(selector) # Returns array of layers matching the selector
-ƒ(selector) # Same as above but returns first match
-layer.ƒƒ(selector) # only search descendants of layer
-layer.ƒ(selector) # same as layer.ƒƒ(), but returns first match
+ƒ(selector) # Search layers based on selector. Returns array or Layer, depending on number of matches.
+layer.ƒ(selector) # Only search descendants of layer.
 ```
 
 | Selector      |  Result |
@@ -41,15 +39,15 @@ layer.ƒ(selector) # same as layer.ƒƒ(), but returns first match
 
 #### More examples
 ```coffeescript
-ƒƒ() # find all layers in your project
-ƒƒ('card > *') # find all layers that are direct descendants of layers named "card"
-ƒƒ('card *') # find all layers that are descendants of layers named "card"
-ƒƒ('*image*') # find all layers containing "image"
-ƒƒ('*card*,*image*') # find all layers containing either "card" or "image"
-ƒƒ('card1 > container *') # find all descendant layers of the "container" inside "card1"
+ƒ() # find all layers in your project
+ƒ('card > *') # find all layers that are direct descendants of layers named "card"
+ƒ('card *') # find all layers that are descendants of layers named "card"
+ƒ('*image*') # find all layers containing "image"
+ƒ('*card*,*image*') # find all layers containing either "card" or "image"
+ƒ('card1 > container *') # find all descendant layers of the "container" inside "card1"
 
 # Add a "slide in" animation to all layers ending with "_slideIn"
-for layer in ƒƒ('*_slideIn')
+for layer in ƒ('*_slideIn')
     originalValue = layer.maxX
     layer.maxX = 0
     layer.animate
