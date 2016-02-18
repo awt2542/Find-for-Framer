@@ -25,20 +25,23 @@ _findAll = (selector, fromLayer) ->
         _match(hierarchy, fromLayer.name+' '+selector)
       else
         _match(hierarchy, selector)
-    return layers if layers.length > 1 else layers[0]
+    if layers.length > 1 
+      return layers
+    else 
+      return layers[0]
   else
     layers
 
 # Recommended
-exports.ƒ = (selector, fromLayer)  -> _findAll(selector, fromLayer)[0]
+exports.ƒ = (selector, fromLayer)  -> _findAll(selector, fromLayer)
 exports.ƒƒ = (selector, fromLayer) -> _findAll(selector, fromLayer)
-Layer::ƒ  = (selector)             -> _findAll(selector, @)[0]
+Layer::ƒ  = (selector)             -> _findAll(selector, @)
 Layer::ƒƒ  = (selector)            -> _findAll(selector, @)
 
 # Backwards compatibility
-exports.Find    = (selector, fromLayer) -> _findAll(selector, fromLayer)[0]
+exports.Find    = (selector, fromLayer) -> _findAll(selector, fromLayer)
 exports.FindAll = (selector, fromLayer) -> _findAll(selector, fromLayer)
-Layer::find     = (selector, fromLayer) -> _findAll(selector, @)[0]
+Layer::find     = (selector, fromLayer) -> _findAll(selector, @)
 Layer::findAll  = (selector, fromLayer) -> _findAll(selector, @)
 
 ###
