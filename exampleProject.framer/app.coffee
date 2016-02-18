@@ -19,7 +19,7 @@ swing = (layer) ->
 ƒƒ('item1 > happy*').forEach (layer) -> swing layer
 	
 # Return the first layer matching the selector
-ƒƒ('item1 > happybagel').hueRotate = 100
+ƒ('item1 > happybagel').hueRotate = 100
 
 ### 
 
