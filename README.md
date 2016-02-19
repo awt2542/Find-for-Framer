@@ -11,7 +11,7 @@ Inspired by CSS selectors, this module makes it easier to find and target layers
 ƒƒ('card image') # all layers named "image" and descendants of layers named "card"
 ƒƒ('card, image') # all layers named "card" and all layers named "image"
 ƒƒ('card*') # all layers with names starting with "card". eg. card1,card2,card3 etc.
-page.currentPage.findAll('card') #  all layers named "card" and descendants of the current page
+page.currentPage.ƒƒ('card') #  all layers named "card" and descendants of the current page
 ```
 ![findModule](https://s3.amazonaws.com/f.cl.ly/items/0Q3u2c2M2A05412j0K2o/pic.png?v=3cfc8b87)
 
