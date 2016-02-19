@@ -20,7 +20,7 @@ _findAll = (selector, fromLayer) ->
 
   if selector?
     stringNeedsRegex = _.find ['*',' ','>',','], (c) -> _.contains selector,c
-    unless stringNeedsRegex
+    unless stringNeedsRegex or fromLayer
       layers = _.filter layers, (layer) -> 
         if layer.name is selector then true
     else
