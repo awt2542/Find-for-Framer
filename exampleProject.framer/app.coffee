@@ -2,7 +2,7 @@
 # https://github.com/awt2542/Find-for-Framer
 
 # Import the module
-{Find, ƒ, FindAll, ƒƒ} = require 'findModule'
+{ƒ,ƒƒ} = require 'findModule'
 
 # https://dribbble.com/shots/2139142-Free-Happy-Manje
 sketch = Framer.Importer.load("imported/selectProject@2x")
@@ -16,25 +16,19 @@ swing = (layer) ->
 		repeat: 999
 
 # Return an array of happy emojis below item1
-for layer in FindAll('item1 > happy*')
+for layer in ƒƒ('item1 > happy*')
 	swing(layer)
 	
 # Return the first layer matching the selector
-Find('item1 > happybagel').hueRotate = 100
+ƒ('item3').opacity = .5 # same as using sketch.item3
+ƒ('item1 > happybagel').hueRotate = 100
 
 ### 
 
 More selectors to try
-FindAll('item2 > *, item3 > *')
-FindAll('happy*')
-FindAll('*burger')
-FindAll('item1 happy*')
-FindAll('artboard > happy*')
-
-Use the florin sign as a shortcut (option + f)
-eg. ƒ('item3 > happymilk')
-
-ƒ() = Find()
-ƒƒ() = FindAll()
-
+ƒƒ('item2 > *, item3 > *')
+ƒƒ('happy*')
+ƒƒ('*burger')
+ƒƒ('item1 happy*')
+ƒƒ('artboard > happy*')
 ###
