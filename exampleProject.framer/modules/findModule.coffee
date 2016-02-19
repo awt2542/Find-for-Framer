@@ -19,12 +19,17 @@ _findAll = (selector, fromLayer) ->
   layers = Framer.CurrentContext.getLayers()
 
   if selector?
-    layers = _.filter layers, (layer) ->
-      hierarchy = _getHierarchy(layer)
-      if fromLayer?
-        _match(hierarchy, fromLayer.name+' '+selector)
-      else
-        _match(hierarchy, selector)
+    stringNeedsRegex = _.find ['*',' ','>',','], (c) -> _.contains selector,c
+    unless stringNeedsRegex
+      layers = _.filter layers, (layer) -> 
+        if layer.name is selector then true
+    else
+      layers = _.filter layers, (layer) ->
+          hierarchy = _getHierarchy(layer)
+          if fromLayer?
+            _match(hierarchy, fromLayer.name+' '+selector)
+          else
+            _match(hierarchy, selector)
   else
     layers
 
