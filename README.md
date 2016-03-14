@@ -17,6 +17,8 @@ page.currentPage.ƒƒ('card') #  all layers named "card" and descendants of the 
 
 Try the example project: http://share.framerjs.com/azkstl349mi5/
 
+Tutorial: https://blog.prototypr.io/prototype-user-flows-in-framer-studio-dc87f5211a47#.el1t0sv8k
+
 #### Installation
 
 1. Download [findModule.coffee](https://github.com/awt2542/Find-for-Framer/raw/master/findModule.coffee) to your project's /modules directory 
