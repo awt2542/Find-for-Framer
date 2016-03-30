@@ -18,13 +18,12 @@ swing = (layer) ->
 # Return an array of happy emojis below item1
 for layer in ƒƒ('item1 > happy*')
 	swing(layer)
-	
+
 # Return the first layer matching the selector
 ƒ('item3').opacity = .5 # same as using sketch.item3
 ƒ('item1 > happybagel').hueRotate = 100
 
-### 
-
+###
 More selectors to try
 ƒƒ('item2 > *, item3 > *')
 ƒƒ('happy*')
