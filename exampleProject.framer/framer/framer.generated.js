@@ -569,9 +569,9 @@ window.__imported__["selectProject/layers.json.js"] = [
 ]
 
 if (typeof(DeviceComponent) !== "undefined") {DeviceComponent.Devices["iphone-6-silver"].deviceImageJP2 = false};
-window.Framer.Defaults.DeviceView = {"deviceScale":-1,"deviceType":"iphone-6-silver","contentScale":1,"orientation":0};
+window.Framer.Defaults.DeviceView = {"deviceScale":"fit","selectedHand":"","deviceType":"apple-iphone-6s-silver","contentScale":1,"orientation":0};
 
-window.Framer.Defaults.DeviceComponent = {"deviceScale":-1,"deviceType":"iphone-6-silver","contentScale":1,"orientation":0};
+window.Framer.Defaults.DeviceComponent = {"deviceScale":"fit","selectedHand":"","deviceType":"apple-iphone-6s-silver","contentScale":1,"orientation":0};
 
 window.FramerStudioInfo = {"deviceImagesUrl":"\/_server\/resources\/DeviceImages","documentTitle":"exampleProject.framer"};
 
@@ -1214,6 +1214,12 @@ Runtime = (function(superClass) {
           return bridge.send("device:change");
         });
       });
+      Framer.Device.on("change:phoneScale", function(phoneScale) {
+        return bridge.send("change:phoneScale", {
+          phoneScale: phoneScale
+        });
+      });
+      Framer.Device._calculatePhoneScale();
     }
     bridge.send("runtime.init");
     return this._errorHandlerSetup();
