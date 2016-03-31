@@ -67,7 +67,7 @@ exports.runTests = ->
   assert
     description: 'from layer'
     result: container.ƒƒ('image')
-    expected: [image,container]
+    expected: [image]
 
   assert
     description: 'single item'
