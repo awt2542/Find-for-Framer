@@ -19,7 +19,7 @@ _findAll = (selector, fromLayer) ->
   layers = Framer.CurrentContext.getLayers()
 
   if selector?
-    stringNeedsRegex = _.find ['*',' ','>',','], (c) -> _.contains selector,c
+    stringNeedsRegex = _.find ['*',' ','>',','], (c) -> _.includes selector,c
     unless stringNeedsRegex or fromLayer
       layers = _.filter layers, (layer) -> 
         if layer.name is selector then true
