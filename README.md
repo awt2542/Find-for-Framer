@@ -15,7 +15,7 @@ page.currentPage.ƒƒ('card') #  all layers named "card" and descendants of the 
 ```
 ![findModule](https://s3.amazonaws.com/f.cl.ly/items/0Q3u2c2M2A05412j0K2o/pic.png?v=3cfc8b87)
 
-Try the example project: http://share.framerjs.com/azkstl349mi5/
+Try the example project: http://share.framerjs.com/fcwnnqn7npi7/
 
 Tutorial: https://blog.prototypr.io/prototype-user-flows-in-framer-studio-dc87f5211a47#.el1t0sv8k
 
