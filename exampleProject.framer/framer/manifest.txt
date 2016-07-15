@@ -1,6 +1,7 @@
 app.coffee
 app.js
 framer/coffee-script.js
+framer/config.json
 framer/framer.generated.js
 framer/framer.init.js
 framer/framer.js
@@ -22,7 +23,9 @@ framer/images/icon-framer.png
 framer/images/icon-framer@2x.png
 framer/images/icon-share.png
 framer/images/icon-share@2x.png
+framer/manifest.txt
 framer/mirror.css
+framer/preview.png
 framer/style.css
 framer/version
 images/framer-icon.png
