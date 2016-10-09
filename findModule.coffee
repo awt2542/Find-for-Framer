@@ -16,7 +16,7 @@ _match = (hierarchy, string) ->
   return hierarchy.match(regExp)
 
 _findAll = (selector, fromLayer) ->
-  layers = Framer.CurrentContext.getLayers()
+  layers = Framer.CurrentContext._layers
 
   if selector?
     stringNeedsRegex = _.find ['*',' ','>',','], (c) -> _.includes selector,c
