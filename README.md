@@ -70,9 +70,6 @@ for i in [0..5]
 ƒ('item2').x = 200
 ```
 
-#### Contact
-
-Twitter: [@andreaswah](http://twitter.com/andreaswah)
 
 #### Thanks to
 Jordan, Marc, David and Koen for early feedback!
